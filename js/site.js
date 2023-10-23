@@ -26,7 +26,7 @@ function calcutatePayments(principal, rate, term){
 function displayPayments(loan, monthlyPayment) {
     
     let principal = loan;
-    let mPayment = monthlyPayment
+    let mPayment = monthlyPayment.toLocaleString('en-US', {style: 'currency',  currency: 'USD',});
 
     document.getElementById('total-principal').textContent = `Total Princiapl is: ${principal}`;
     document.getElementById('monthly-payments').textContent  = `${mPayment}`;
