@@ -29,7 +29,7 @@ function displayPayments() {
     
     let principal = getLoanAmount();
 
-    document.getElementById('total-principal').textContent = `${principal}`;
+    document.getElementById('total-principal').textContent = `Total Princiapl is: ${principal}`;
 
 
 }
