@@ -13,10 +13,18 @@ function calcutatePayments(principal, rate, term){
     let percent = rate;
     let time = term;
     let negTime = -time;
-    let denom = 1+ (rate/1200);
+    let denom = 1 + (rate/1200);
 
     let monthlyPayment = (loan * (percent/1200)) /( 1-(denom**negTime));
-    console.log ("the monthly payment is ", monthlyPayment);
+
+    let remainingBalance = loan;
+    let interestPayment = (remainingBalance * percent)/1200;
+    let principalPayment = monthlyPayment-interestPayment;
+    
+
+ 
+ 
+
 
     displayPayments(loan, monthlyPayment)
 
