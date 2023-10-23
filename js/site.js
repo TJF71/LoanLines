@@ -26,9 +26,11 @@ function calcutatePayments(principal, rate, term){
 function displayPayments(loan, monthlyPayment) {
     
     let principal = loan;
-
+    let mPayment = monthlyPayment
 
     document.getElementById('total-principal').textContent = `Total Princiapl is: ${principal}`;
+    document.getElementById('monthly-payments').textContent  = `${mPayment}`;
+
 
 
 }
