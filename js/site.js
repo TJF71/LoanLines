@@ -22,23 +22,29 @@ function calcutatePayments(principal, rate, term){
     let principalPayment = monthlyPayment-interestPayment;
     
 
- 
- 
-
-
-    displayPayments(loan, monthlyPayment)
+    displayPayments(loan, monthlyPayment, time,)
 
 
 }
 
-function displayPayments(loan, monthlyPayment) {
+function displayPayments(loan, monthlyPayment, time) {
     
+    const paymentTable = document.getElementById('payment-table');
+
+    // clear the table
+    paymentTable.innerHTML = '';
+
     let principal = loan;
     let mPayment = monthlyPayment.toLocaleString('en-US', {style: 'currency',  currency: 'USD',});
+    let months = time;
 
     document.getElementById('total-principal').textContent = `Total Princiapl is: ${principal}`;
     document.getElementById('monthly-payments').textContent  = `${mPayment}`;
 
-
+    for (let i = 0; i < months; i++){
+        let month = month[i];
+        
+        
+    }
 
 }
