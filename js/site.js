@@ -8,8 +8,6 @@ function getValues() {
 }
 
 
-
-
 function calcutatePayments(principal, rate, term){
     let loan = principal;
     let percent = rate;
@@ -20,13 +18,15 @@ function calcutatePayments(principal, rate, term){
     let monthlyPayment = (loan * (percent/1200)) /( 1-(denom**negTime));
     console.log ("the monthly payment is ", monthlyPayment);
 
+    displayPayments(loan, monthlyPayment)
 
 
 }
 
-function displayPayments() {
+function displayPayments(loan, monthlyPayment) {
     
-    let principal = getLoanAmount();
+    let principal = loan;
+
 
     document.getElementById('total-principal').textContent = `Total Princiapl is: ${principal}`;
 
