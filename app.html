@@ -74,42 +74,45 @@
             <div class="col-4 order-md-first">
                 <div class="card p-5">
                     <div class="card-body">
-                        <!-- LOAN AMOUNT -->
-                        <div class="row row-cols-1 row-cols-2">
-                            <div class="col order-md-first">
-                                <label for="loanAmount" class="form-label">Loan Amount</label>
+                        <form action="#">
+                            <!-- LOAN AMOUNT -->
+                            <div class="row row-cols-1 row-cols-2">
+                                <div class="col order-md-first">
+                                    <label for="loanAmount" class="form-label">Loan Amount</label>
+                                </div>
+                                <div class="col order-md-last">
+                                    <input class="form-control" id="loanAmount" name="loanAmount" type="number"
+                                        placeholder="Loan Amount" value="0" />
+                                </div>
                             </div>
-                            <div class="col order-md-last">
-                                <input class="form-control" id="loanAmount" name="loanAmount" type="number"
-                                    placeholder="Loan Amount" value="0" />
+                            <!-- LOAN TERM -->
+                            <div class="row row-cols-1 row-cols-2">
+                                <div class="col order-md-first">
+                                    <label for="loanTerm" class="form-label">Term (Months)</label>
+                                </div>
+                                <div class="col order-md-last">
+                                    <input class="form-control" id="loanTerm" name="loanTerm" type="number"
+                                        placeholder="Loan Term" value="0" />
+                                </div>
                             </div>
-                        </div>
-                        <!-- LOAN TERM -->
-                        <div class="row row-cols-1 row-cols-2">
-                            <div class="col order-md-first">
-                                <label for="loanTerm" class="form-label">Term (Months)</label>
+                            <!-- LOAN INTEREST RATE -->
+                            <div class="row row-cols-1 row-cols-2">
+                                <div class="col order-md-first">
+                                    <label for="interestRate" class="form-label">Annual Interest Rate</label>
+                                </div>
+                                <div class="col order-md-last">
+                                    <input class="form-control" id="interestRate" name="interestRate" type="number"
+                                        placeholder="Loan Interest" value="0" />
+                                </div>
                             </div>
-                            <div class="col order-md-last">
-                                <input class="form-control" id="loanTerm" name="loanTerm" type="number"
-                                    placeholder="Loan Term" value="0" />
-                            </div>
-                        </div>
-                        <!-- LOAN INTEREST RATE -->
-                        <div class="row row-cols-1 row-cols-2">
-                            <div class="col order-md-first">
-                                <label for="interestRate" class="form-label">Annual Interest Rate</label>
-                            </div>
-                            <div class="col order-md-last">
-                                <input class="form-control" id="interestRate" name="interestRate" type="number"
-                                    placeholder="Loan Interest" value="0" />
-                            </div>
-                        </div>
 
-                        <div class="text-end">
-                            <button class="btn btn-dark" id="btnSubmit" type="button">
-                                Calculate
-                            </button>
-                        </div>
+                            <!-- BUTTON -->
+                            <div class="text-end">
+                                <button class="btn btn-dark" id="btnSubmit" type="button">
+                                    Calculate
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -205,7 +208,7 @@
         // get the button on the page and assign it to variable
         let button = document.getElementById('btnSubmit');
         // tell the button to run the displayMessage function when clicked
-        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', getValues);
     </script>
 
 </body>
