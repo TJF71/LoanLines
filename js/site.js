@@ -50,19 +50,25 @@ function displayPayments(loan, monthlyPayment, time, percent) {
 
     for (let i = 0; i < months; i++) {
       
-
-        interest = principal * (interest / 1200);
+        console.log ("the start principal is:", principal);
+        console.log ("the start interest is: ", interest);
+        interest = principal * interest / 1200;
+  
+        console.log(interest)
 
         principalPayment = monthPayment - interest;
+        console.log (principalPayment)
 
 
-        remainingBalance = principal - principalPayment 
+        remainingBalance = principal - principalPayment;
+        console.log(remainingBalance); 
 
         principal = remainingBalance;
+        // console.log(principal);
 
 
 
-        console.log(interest, principalPayment, remainingBalance, principal)
+
 
 
 
