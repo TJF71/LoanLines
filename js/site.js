@@ -51,6 +51,7 @@ function calculateTotals (principal, term, rate){
 function calculatePayments(principal, term, rate, monthlyPayment){
     let balance = principal;
     let totalInterest = 0;
+    let paymentsArray = [];
 
 // for lopp to go through all of the months
 for (let month = 1; month <= term; month += 1){
@@ -59,7 +60,6 @@ for (let month = 1; month <= term; month += 1){
     let principalPayment = monthlyPayment - interestPayment;
     balance = balance - principalPayment;
     totalInterest = totalInterest + interestPayment;
-
 
 //   put the calculations of each monht into an object
     let paymentObj = {
@@ -98,9 +98,14 @@ function displayTotals(totals){
 
 
 function displayPayments(paymentsArr){
+    let format = {
+        style: 'currency',
+        currency: 'USD'
+    }
+
     // accept array from 
     const tableRowTemplate = document.getElementById('monthlyPaymentTemplate');
-    const paymentsTable = document.getElementById('payment-table');
+    const paymentsTable = document.getElementById('paymentTable');
 
 
     for (let i = 0; i < paymentsArr.length; i++){
