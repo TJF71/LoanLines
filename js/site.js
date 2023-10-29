@@ -17,7 +17,11 @@ function getValues() {
         })
     } else {
         let totals = calculateTotals(principal, term, interest);
-        displayTotals(totals)
+        displayTotals(totals);
+
+        let payments = calculatePayments(principal, term, interest, totals.monthlyPayment);
+        displayPayments(payments);
+      
     }
 
 }
@@ -38,11 +42,23 @@ function calculateTotals (principal, term, rate){
     }
 
     return loanTotals;
+
 }
 
 
 // calculate each month of the loan
-function calculatePayments(paymentsArr){
+function calculatePayments(principal, term, rate, monthlyPayment){
+    let balance = principal;
+    let totalInterest = 0;
+
+// for lopp to go through all of the months
+
+
+
+//   put the calculations of each monht into an object
+//   put that object into an array
+// return an array of objects
+
 
 }
 
@@ -54,15 +70,17 @@ function displayTotals(totals){
     }
 
     document.getElementById('monthly-payment').textContent = totals.monthlyPayment.toLocaleString('en-US', format);
-    document.getElementById('total-principal').textContent = totals.totalPrincipal.toLocaleString('en-US');
-    document.getElementById('total-interest').textContent = totals.totalInterest.toLocaleString('en-US');
-    document.getElementById('total-cost').textContent = totals.totalCost.toLocaleString('en-US');
+    document.getElementById('total-principal').textContent = totals.totalPrincipal.toLocaleString('en-US', format);
+    document.getElementById('total-interest').textContent = totals.totalInterest.toLocaleString('en-US',  format);
+    document.getElementById('total-cost').textContent = totals.totalCost.toLocaleString('en-US', format);
 }   
 
 
-// function displayPayments(paymentsArr){
 
-// }
+
+function displayPayments(paymentsArr){
+
+}
 
 
 
