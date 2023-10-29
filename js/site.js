@@ -52,6 +52,7 @@ function calculatePayments(principal, term, rate, monthlyPayment){
     let balance = principal;
     let totalInterest = 0;
     let paymentsArray = [];
+    
 
 // for lopp to go through all of the months
 for (let month = 1; month <= term; month += 1){
