@@ -71,43 +71,48 @@
 
     <main class="container py-3">
         <div class="row row-cols-1 row-cols-2">
-            <div class="col-4 order-md-first">
-                <div class="card p-5">
+
+            <!-- FIRST CARD WITH DATA ENTRY POINTS -->
+            <div class="col-12 col-md-4 order-md-first">
+                <div class="card h-100">
                     <div class="card-body">
-                        <form action="#">
+                        <form action="#" class="d-flex flex-column h-100">
+                            
                             <!-- LOAN AMOUNT -->
-                            <div class="row row-cols-1 row-cols-2">
+                            <div class="my-2 row row-cols-1 row-cols-2">
                                 <div class="col order-md-first">
                                     <label for="loanAmount" class="form-label">Loan Amount</label>
                                 </div>
                                 <div class="col order-md-last">
                                     <input class="form-control" id="loanAmount" name="loanAmount" type="number"
-                                        placeholder="Loan Amount" value="0" />
+                                        placeholder="Loan Amount" value="25000" />
                                 </div>
                             </div>
+
                             <!-- LOAN TERM -->
-                            <div class="row row-cols-1 row-cols-2">
+                            <div class="my-2 row row-cols-1 row-cols-2">
                                 <div class="col order-md-first">
                                     <label for="loanTerm" class="form-label">Term (Months)</label>
                                 </div>
                                 <div class="col order-md-last">
                                     <input class="form-control" id="loanTerm" name="loanTerm" type="number"
-                                        placeholder="Loan Term" value="0" />
+                                        placeholder="Loan Term" value="48" />
                                 </div>
                             </div>
+
                             <!-- LOAN INTEREST RATE -->
-                            <div class="row row-cols-1 row-cols-2">
+                            <div class="my-2 row row-cols-1 row-cols-2">
                                 <div class="col order-md-first">
                                     <label for="interestRate" class="form-label">Annual Interest Rate</label>
                                 </div>
                                 <div class="col order-md-last">
                                     <input class="form-control" id="interestRate" name="interestRate" type="number"
-                                        placeholder="Loan Interest" value="0" />
+                                        placeholder="Loan Interest" value="5" />
                                 </div>
                             </div>
 
                             <!-- BUTTON -->
-                            <div class="text-end">
+                            <div class="my-5 text-end">
                                 <button class="btn btn-dark" id="btnSubmit" type="button">
                                     Calculate
                                 </button>
@@ -117,28 +122,43 @@
                 </div>
             </div>
 
+            <!-- PAYMENTS OUTPUT CARD -->
+            <div class="col-12 col-md-8 order-md-last">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- MONTHLY PAYMENT -->
+                        <h6 class="text-center  display-6 ">
+                            Your Monthly Payment
+                        </h6>
+                        <div id="monthly-payments" class="text-center my-5 fs-1 text-success">
+                            $471.78
 
-            <div class="col-8 order-md-last">
-                <div class="card p-5">
-                    <h1 class="text-center">Your Monthly Payments</h1>
-                        <h2 id="monthly-payments"  class="text-center"></h2>
-   
-          
+                        </div>
 
-                    <h3 id="total-principal">Total Principal</h3>
+                        <!-- PRINICPLE INTEREST AND COST -->
+                        <div class="row row-cols-2 fs-5">
 
+                            <!-- TOTAL PRINCIPAL -->
+                            <div class="col">Total Principal</div>
+                            <div class="col text-end"> $25,000</div>
+                            <!-- TOTAL INTEREST -->
+                            <div class="col">Total Interest</div>
+                            <div class="col text-end"> $3,305.85</div>
+                            <!-- TOTAL COST -->
+                            <div class="col">Total Cost</div>
+                            <div class="col text-end"> $28,306.85</div>
+                        </div>
 
-                    <h3 id="total-interest">Total Interest</h3>
-                    <h3 id="total-cost">Total Cost</h3>
+                    </div>
                 </div>
-
             </div>
+
         </div>
 
 
         <div class="table-responsive">
             <table class="table table-striped border mt-2">
-                <thead class="table-light">
+                <thead class="table-dark">
                     <tr>
                         <th>Month</th>
                         <th>Payment</th>
@@ -149,15 +169,15 @@
                     </tr>
                 </thead>
                 <tbody id="payment-table">
-                <tr>
-                    <td>1</td>
-                    <td>471.78</td>
-                    <td>367.61</td>
-                    <td>104.17</td>
-                    <td>104.17</td>
-                    <td>24631.39</td>
-                </tr>
-            </tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>471.78</td>
+                        <td>367.61</td>
+                        <td>104.17</td>
+                        <td>104.17</td>
+                        <td>24631.39</td>
+                    </tr>
+                </tbody>
 
             </table>
 
