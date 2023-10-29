@@ -16,6 +16,7 @@ function getValues() {
             text: 'Please enter valid numbers for your loan'
         })
     } else {
+
         let totals = calculateTotals(principal, term, interest);
         displayTotals(totals);
 
@@ -52,13 +53,32 @@ function calculatePayments(principal, term, rate, monthlyPayment){
     let totalInterest = 0;
 
 // for lopp to go through all of the months
+for (let month = 1; month <= term; month += 1){
 
+    let interestPayment = balance * (rate / 1200);
+    let principalPayment = monthlyPayment - interestPayment;
+    balance = balance - principalPayment;
+    totalInterest = totalInterest + interestPayment;
 
 
 //   put the calculations of each monht into an object
+    let paymentObj = {
+        month: month,
+        payment: monthlyPayment,
+        principal: principalPayment,
+        interest: interestPayment,
+        totalInterest: totalInterest,
+        balance: balance
+    };
+
 //   put that object into an array
+
+    paymentsArray.push(paymentObj);
+}
+
 // return an array of objects
 
+return paymentsArray;
 
 }
 
@@ -77,8 +97,30 @@ function displayTotals(totals){
 
 
 
-
 function displayPayments(paymentsArr){
+    // accept array from 
+    const tableRowTemplate = document.getElementById('payment-template');
+    const paymentsTable = document.getElementById('payment-table');
+
+
+    for (let i = 0; i < paymentsArr.length; i++){
+        let payment = paymentsArr[i];
+
+        let tableRow = tableRowTemplate.content.cloneNode(true);
+
+        let tableCells = tableRow.querySelectorAll('td');
+
+        tableCells[0].textContent = payment.month;
+        tableCells[1].textContent = payment.monthlyPayment;
+        tableCells[2].textContent = payment.principal;
+        tableCells[3].textContent = payment.interest;
+        tableCells[4].textContent = payment.totalInterest;
+        tableCells[5].textContent = payment.balace;
+
+        paymentsTable.appendChild(tableRow);
+
+    }
+
 
 }
 
