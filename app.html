@@ -157,7 +157,7 @@
 
 
         <div class="table-responsive">
-            <table class="table table-striped border mt-2" id="payment-template">
+            <table class="table table-striped border mt-2">
                 <thead class="table-dark">
                     <tr>
                         <th>Month</th>
@@ -168,14 +168,9 @@
                         <th>Balance</th>
                     </tr>
                 </thead>
-                <tbody id="payment-table">
+                <tbody id="paymentTable">
                     <tr>
-                        <td>1</td>
-                        <td>471.78</td>
-                        <td>367.61</td>
-                        <td>104.17</td>
-                        <td>104.17</td>
-                        <td>24631.39</td>
+                        <!-- table data here -->
                     </tr>
                 </tbody>
 
@@ -211,6 +206,17 @@
         </div>
     </footer>
 
+    <template id="monthlyPaymentTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>$367.61</td>
+            <td>$104.17</td>
+            <td>$104.17</td>
+            <td>$24,632.39</td>
+        </tr>
+
+    </template>
 
 
     <!--Bootstrap JS  -->

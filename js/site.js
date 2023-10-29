@@ -99,7 +99,7 @@ function displayTotals(totals){
 
 function displayPayments(paymentsArr){
     // accept array from 
-    const tableRowTemplate = document.getElementById('payment-template');
+    const tableRowTemplate = document.getElementById('monthlyPaymentTemplate');
     const paymentsTable = document.getElementById('payment-table');
 
 
