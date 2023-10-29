@@ -77,7 +77,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <form action="#" class="d-flex flex-column h-100">
-                            
+
                             <!-- LOAN AMOUNT -->
                             <div class="my-2 row row-cols-1 row-cols-2">
                                 <div class="col order-md-first">
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="col order-md-last">
                                     <input class="form-control" id="loanTerm" name="loanTerm" type="number"
-                                        placeholder="Loan Term" value="48" />
+                                        placeholder="Loan Term" value="48" min = "1" />
                                 </div>
                             </div>
 
@@ -130,7 +130,7 @@
                         <h6 class="text-center  display-6 ">
                             Your Monthly Payment
                         </h6>
-                        <div id="monthly-payments" class="text-center my-5 fs-1 text-success">
+                        <div id="monthly-payment" class="text-center my-5 fs-1 text-success">
                             $471.78
 
                         </div>
@@ -140,13 +140,13 @@
 
                             <!-- TOTAL PRINCIPAL -->
                             <div class="col">Total Principal</div>
-                            <div class="col text-end"> $25,000</div>
+                            <div class="col text-end" id = "total-principal"> $25,000</div>
                             <!-- TOTAL INTEREST -->
                             <div class="col">Total Interest</div>
-                            <div class="col text-end"> $3,305.85</div>
+                            <div class="col text-end" id ="total-interest"> $3,305.85</div>
                             <!-- TOTAL COST -->
                             <div class="col">Total Cost</div>
-                            <div class="col text-end"> $28,306.85</div>
+                            <div class="col text-end" id="total-cost"> $28,306.85</div>
                         </div>
 
                     </div>
