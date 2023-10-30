@@ -116,12 +116,12 @@ function displayPayments(paymentsArr){
 
         let tableCells = tableRow.querySelectorAll('td');
 
-        // tableCells[0].textContent = payment.month;
+        tableCells[0].textContent = payment.month;
         tableCells[1].textContent = payment.monthlyPayment;
-        // tableCells[2].textContent = payment.principal;
-        // tableCells[3].textContent = payment.interest;
-        // tableCells[4].textContent = payment.totalInterest;
-        // tableCells[5].textContent = payment.balace;
+        tableCells[2].textContent = payment.principal;
+        tableCells[3].textContent = payment.interest;
+        tableCells[4].textContent = payment.totalInterest;
+        tableCells[5].textContent = payment.balace;
 
         paymentsTable.appendChild(tableRow);
 
