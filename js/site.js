@@ -117,11 +117,11 @@ function displayPayments(paymentsArr){
         let tableCells = tableRow.querySelectorAll('td');
 
         tableCells[0].textContent = payment.month;
-        tableCells[1].textContent = payment.payment;
-        tableCells[2].textContent = payment.principal;
-        tableCells[3].textContent = payment.interest;
-        tableCells[4].textContent = payment.totalInterest;
-        tableCells[5].textContent = payment.balance;
+        tableCells[1].textContent = payment.payment.toLocaleString('en-US', format);
+        tableCells[2].textContent = payment.principal.toLocaleString('en-US', format);
+        tableCells[3].textContent = payment.interest.toLocaleString('en-US', format);
+        tableCells[4].textContent = payment.totalInterest.toLocaleString('en-US', format);
+        tableCells[5].textContent = Math.abs(payment.balance).toLocaleString('en-US', format);
 
         paymentsTable.appendChild(tableRow);
 
