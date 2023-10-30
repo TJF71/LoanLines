@@ -121,7 +121,7 @@ function displayPayments(paymentsArr){
         tableCells[2].textContent = payment.principal;
         tableCells[3].textContent = payment.interest;
         tableCells[4].textContent = payment.totalInterest;
-        tableCells[5].textContent = payment.balace;
+        tableCells[5].textContent = payment.balance;
 
         paymentsTable.appendChild(tableRow);
 
