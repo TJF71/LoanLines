@@ -59,8 +59,8 @@ for (let month = 1; month <= term; month += 1){
 
     let interestPayment = balance * (rate / 1200);
     let principalPayment = monthlyPayment - interestPayment;
-    balance = balance - principalPayment;
-    totalInterest = totalInterest + interestPayment;
+    balance -= principalPayment;
+    totalInterest += interestPayment;
 
 //   put the calculations of each monht into an object
     let paymentObj = {
@@ -117,7 +117,7 @@ function displayPayments(paymentsArr){
         let tableCells = tableRow.querySelectorAll('td');
 
         tableCells[0].textContent = payment.month;
-        tableCells[1].textContent = payment.monthlyPayment;
+        tableCells[1].textContent = payment.payment;
         tableCells[2].textContent = payment.principal;
         tableCells[3].textContent = payment.interest;
         tableCells[4].textContent = payment.totalInterest;
