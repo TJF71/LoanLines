@@ -4,10 +4,12 @@ function getValues() {
     let term = document.getElementById('loanTerm').value;
     let interest = document.getElementById('interestRate').value;
 
+    // set up for variables related to principal, term and interest
     principal = parseInt(principal);
     term = parseInt(term);
     interest = parseFloat(interest);
 
+    // Swal message response should the use not input values    
     if (isNaN(principal) || isNaN(term) || isNaN(interest) || principal <= 0 || term <= 0 || interest <= 0){
         Swal.fire({
             icon:'error',
@@ -62,7 +64,7 @@ for (let month = 1; month <= term; month += 1){
     balance -= principalPayment;
     totalInterest += interestPayment;
 
-//   put the calculations of each monht into an object
+//   put the calculations of each month into an object
     let paymentObj = {
         month: month,
         payment: monthlyPayment,
@@ -89,7 +91,7 @@ function displayTotals(totals){
         style: 'currency',
         currency: 'USD'
     }
-
+// convert payments to US format
     document.getElementById('monthly-payment').textContent = totals.monthlyPayment.toLocaleString('en-US', format);
     document.getElementById('total-principal').textContent = totals.totalPrincipal.toLocaleString('en-US', format);
     document.getElementById('total-interest').textContent = totals.totalInterest.toLocaleString('en-US',  format);
@@ -97,7 +99,7 @@ function displayTotals(totals){
 }   
 
 
-
+// display the payments to the user
 function displayPayments(paymentsArr){
     let format = {
         style: 'currency',
@@ -108,7 +110,8 @@ function displayPayments(paymentsArr){
     const tableRowTemplate = document.getElementById('monthlyPaymentTemplate');
     const paymentsTable = document.getElementById('paymentsTable');
 
-
+    // use a for loop to create a value for 
+    // each relavant element on the output table.
     for (let i = 0; i < paymentsArr.length; i++){
         let payment = paymentsArr[i];
 
